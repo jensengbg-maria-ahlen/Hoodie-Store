@@ -1,0 +1,27 @@
+{
+  "products": [
+    {
+      "name": "Fire",
+      "color": "Red",
+      "price": 699,
+      "id": "ABC123456789",
+      "img": "hoodie-fire.png"
+    },
+    {
+      "name": "Ash",
+      "color": "Grey",
+      "price": 699,
+      "id": "ABC123456787",
+      "img": "hoodie-ash.png"
+    },
+    {
+      "name": "Ocean",
+      "color": "Blue",
+      "price": 699,
+      "id": "ABC123456788",
+      "img": "hoodie-ocean.png"
+    }
+  ],
+  "orders": [],
+  "count": 0
+}
