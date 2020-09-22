@@ -16,8 +16,8 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    toggleCart() {
-
+    toggleCart(state) {
+      state.ui.showCart = !state.ui.showCart
     },
     updateProducts(state, products) {
       state.products = products
@@ -50,6 +50,8 @@ export default new Vuex.Store({
       
       ctx.commit('orderConfirmed', data)
       ctx.commit('emptyCart')
+
+      ctx.commit('toggleCart')
     }
   },
   getters: {
