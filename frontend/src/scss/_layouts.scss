@@ -1,0 +1,41 @@
+@import './variables';
+
+body {
+    background: #eee;
+
+    #app {
+        max-width: 1000px;
+        margin: 2rem auto;
+        
+        header {
+            background: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+
+            .product {
+                background: white;
+                box-shadow: $boxShadow;
+            }
+
+            figure {
+                background: rgb(167, 167, 167);
+                @include reset-mp;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                padding: 2rem 1rem 0 1rem;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
