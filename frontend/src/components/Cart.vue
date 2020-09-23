@@ -1,8 +1,8 @@
 <template>
   <aside id="cart">
       <div class="cart-icon" @click="toggleCart"></div>
-      <section class="cart-items" v-if="showCart">
-          <article class="item" v-for="(item, index) in cart" :key="index">{{ item.name }}</article>
+      <section class="cart-items" v-if="showCart"> 
+          <article class="item" v-for="(item, index) in cart" :key="index">Name: {{ item.name }} <br> Quantity: {{ item.quantity }}</article>
           <p class="total">Total cost: <b>{{ totalCost }}:-</b></p>
           <a href="#" class="btn" @click.prevent="sendOrder">Buy it!</a>
       </section>

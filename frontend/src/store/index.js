@@ -23,7 +23,14 @@ export default new Vuex.Store({
       state.products = data.products
     },
     addToCart(state, product) {
-      state.cart.push(product)
+      let found = state.cart.find(item => item.id == product.id);
+
+      if(found) {
+        Vue.set(product, 'quantity', (found.quantity++))
+      } else {
+        state.cart.push(product);
+        Vue.set(product, 'quantity', 1)
+      }
     },
     orderConfirmed(state, confirm) {
       state.confirmed = confirm.data
@@ -31,7 +38,7 @@ export default new Vuex.Store({
     emptyCart(state) {
       state.cart = []
       router.push('/confirmation')
-    }
+    },
   },
   actions: {
     async fetchProducts(ctx) {
@@ -50,13 +57,12 @@ export default new Vuex.Store({
       
       ctx.commit('orderConfirmed', data)
       ctx.commit('emptyCart')
-
       ctx.commit('toggleCart')
     }
   },
   getters: {
     products: state => {
       return state.products
-    }
+    } 
   }
 })
