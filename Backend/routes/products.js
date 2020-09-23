@@ -4,7 +4,7 @@ const { db } = require('./../database');
 
 router.get('/', (req, res) => {
     let products = db.get('products').value()
-    res.send(products);
+    res.send({products: products});
 });
 
 module.exports = router;

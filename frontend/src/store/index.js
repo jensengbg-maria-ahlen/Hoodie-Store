@@ -19,8 +19,8 @@ export default new Vuex.Store({
     toggleCart(state) {
       state.ui.showCart = !state.ui.showCart
     },
-    updateProducts(state, products) {
-      state.products = products
+    updateProducts(state, data) {
+      state.products = data.products
     },
     addToCart(state, product) {
       state.cart.push(product)

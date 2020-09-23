@@ -7,7 +7,6 @@
       </nav>
       <Cart />
     </header>
-    
     <router-view/>
   </div>
 </template>

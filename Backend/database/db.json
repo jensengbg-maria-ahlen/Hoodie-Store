@@ -22,6 +22,35 @@
       "img": "hoodie-ocean.png"
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "orderNr": "58440f75-774e-4e43-9e98-8ceba1b78e10",
+      "timeStamp": 1600845632153,
+      "items": [
+        {
+          "name": "Fire",
+          "color": "Red",
+          "price": 699,
+          "id": "ABC123456789",
+          "img": "hoodie-fire.png"
+        },
+        {
+          "name": "Fire",
+          "color": "Red",
+          "price": 699,
+          "id": "ABC123456789",
+          "img": "hoodie-fire.png"
+        },
+        {
+          "name": "Fire",
+          "color": "Red",
+          "price": 699,
+          "id": "ABC123456789",
+          "img": "hoodie-fire.png"
+        }
+      ],
+      "totalOrderVlaue": 2097
+    }
+  ],
   "count": 0
 }

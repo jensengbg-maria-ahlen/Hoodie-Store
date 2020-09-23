@@ -4,7 +4,4 @@ const FileSync = require('lowdb/adapters/FileSync');
 const adapter = new FileSync('./database/db.json');
 const db = low(adapter);
 
-db.defaults({ products: [], orders: [], count: 0 })
-  .write()
-
 module.exports = { db };
