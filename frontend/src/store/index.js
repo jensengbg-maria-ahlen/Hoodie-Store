@@ -70,8 +70,8 @@ export default new Vuex.Store({
       let items = state.cart.map(item => {
         return item.quantity * item.price
       })
-      return items.reduce(function(prev, current) {
-        return prev + current;
+      return items.reduce(function(price, product) {
+        return price + product;
       }, 0)
     }
   }
