@@ -25,7 +25,7 @@ export default {
             return this.$store.state.cart
         },
         totalCost() {
-            return this.$store.state.cart.reduce((acc, item) => acc + item.price, 0)
+            return this.$store.getters.totalPrice
         },
         showCart() {
             return this.$store.state.ui.showCart

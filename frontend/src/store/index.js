@@ -23,10 +23,12 @@ export default new Vuex.Store({
       state.products = data.products
     },
     addToCart(state, product) {
-      let found = state.cart.find(item => item.id == product.id);
+      let cartItem = state.cart.find(item => item.id == product.id);
 
-      if(found) {
-        Vue.set(product, 'quantity', (found.quantity++))
+      if(cartItem) {
+        cartItem.quantity++
+        this.totalPrice = (cartItem.quantity * cartItem.price)
+        
       } else {
         state.cart.push(product);
         Vue.set(product, 'quantity', 1)
@@ -63,6 +65,14 @@ export default new Vuex.Store({
   getters: {
     products: state => {
       return state.products
-    } 
+    },
+    totalPrice(state) {
+      let items = state.cart.map(item => {
+        return item.quantity * item.price
+      })
+      return items.reduce(function(prev, current) {
+        return prev + current;
+      }, 0)
+    }
   }
 })

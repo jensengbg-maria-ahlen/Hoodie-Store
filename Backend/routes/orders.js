@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
         orderNr: uuidv4(),
         timeStamp: Date.now(),
         items: req.body.items,
-        totalOrderVlaue: req.body.items.reduce((acc, item) => acc + item.price, 0)
+        totalOrderValue: req.body.items.reduce((acc, item) => acc + item.price, 0)
     }
 
     db.get('orders').push(order).write()
