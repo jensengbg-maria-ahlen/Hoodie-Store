@@ -8,13 +8,11 @@ router.post('/', (req, res) => {
         orderNr: uuidv4(),
         timeStamp: Date.now(),
         items: req.body.items,
-        totalOrderValue: req.body.totalOrderValue
+        totalOrderVlaue: req.body.items.reduce((acc, item) => acc + (item.quantity * item.price), 0)
     }
 
-    db.get('orders').push(order).write()
-
-    res.send({ msg: 'Thank you for your order!', orderNr: order.orderNr })
-
+    db.get('orders').push(order).write();
+    res.send({ msg: 'Thank you for your order!', orderNr: order.orderNr });
 });
 
 module.exports = router;
